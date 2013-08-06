@@ -20,7 +20,8 @@ $ tar -cz . | curl -XPOST -sSNT- localhost:9000/deploy/edmellum/myapp
 ```
 
 ## Todo
+* Tests
 * CLI module
 * Git hook support
 * Clustering
-* Load balancing
+* Cluster load balancing
