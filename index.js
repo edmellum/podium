@@ -43,10 +43,9 @@ proxy.createServer(function(req, res, proxy) {
     return res.end();
   }
   
-  // This is where load balancing goes. Right now we just select the
-  // first drone.
+  // Basic load balancing by routing the request to a random drone.
   var drones = app.drones;
-  var drone = drones[Object.keys(drones)[0]];
+  var drone = drones[Object.keys(drones)[Math.floor(Math.random() * drones.length)]];
 
   console.log('Proxying to:', subdomain, '| Drone:', drone.data.uid);
   
